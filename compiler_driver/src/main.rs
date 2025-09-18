@@ -43,6 +43,9 @@ fn preprocess_source_file(file_path: &Path)-> PathBuf {
 fn compile_preprocessed_file(preprocessed_file: &Path) -> PathBuf {
     let input_file = preprocessed_file.to_str().unwrap();
     let output_file = preprocessed_file.with_extension("s");
+    if output_file.exists() {
+        std::fs::remove_file(&output_file).expect("Failed to delete existing assembly file");
+    }
     let output_file_str = output_file.to_str().unwrap();
 
     let status = Command::new("gcc")
@@ -64,6 +67,9 @@ fn compile_preprocessed_file(preprocessed_file: &Path) -> PathBuf {
 fn assemble_to_object_file(assembly_file: &Path){
     let input_file = assembly_file.to_str().unwrap();
     let output_file = assembly_file.with_extension("o");
+    if output_file.exists() {
+        std::fs::remove_file(&output_file).expect("Failed to delete existing object file");
+    }
     let output_file_str = output_file.to_str().unwrap();
 
 
