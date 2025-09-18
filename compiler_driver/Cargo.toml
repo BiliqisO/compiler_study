@@ -1,0 +1,10 @@
+[package]
+name = "compiler_driver"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[[bin]]
+name = "compiler_driver"
+path = "src/main.rs"
