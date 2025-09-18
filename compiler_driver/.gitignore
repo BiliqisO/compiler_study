@@ -1,1 +1,5 @@
 /target
+*.o
+*.i
+*.s
+Cargo.lock
