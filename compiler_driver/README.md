@@ -1,6 +1,6 @@
 # C Compiler Driver
 
-A simple compiler driver written in Rust that automates the compilation process for C source files. This project is part of my compiler study journey following a book on compiler construction.
+A simple compiler driver written in Rust that automates the compilation process for C source files. This project is part of my compiler study journey following a book by Nora Sandler - Writing a C Compiler.
 
 ## What is a Compiler Driver?
 
@@ -63,20 +63,8 @@ Assembly to object file succeeded!
 
 4. You'll find `hello.o` (object file) in the same directory.
 
-### Complete Example with Linking
 
-To create an executable, you still need to link the object file:
 
-```bash
-# Compile with the driver
-./target/release/compiler_driver hello.c
-
-# Link to create executable
-gcc hello.o -o hello
-
-# Run the program
-./hello
-```
 
 ## How It Works
 
